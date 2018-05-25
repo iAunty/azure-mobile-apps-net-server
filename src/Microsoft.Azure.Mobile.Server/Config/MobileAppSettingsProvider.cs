@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Specialized;
 using System.Configuration;
+using Microsoft.Azure.Mobile.Server.Resource;
 
 namespace Microsoft.Azure.Mobile.Server.Config
 {

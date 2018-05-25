@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
+using Microsoft.Azure.Mobile.Server.Extensions;
 using Microsoft.Azure.Mobile.Server.Properties;
 
 namespace Microsoft.Azure.Mobile.Server.Config

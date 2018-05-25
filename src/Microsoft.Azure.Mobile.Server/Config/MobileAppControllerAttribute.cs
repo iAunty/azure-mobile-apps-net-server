@@ -15,6 +15,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using System.Web.Http.Tracing;
 using Microsoft.Azure.Mobile.Server.Cache;
+using Microsoft.Azure.Mobile.Server.Extensions;
 using Microsoft.Azure.Mobile.Server.Properties;
 using Microsoft.Azure.Mobile.Server.Serialization;
 using Newtonsoft.Json;

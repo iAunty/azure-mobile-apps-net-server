@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 using Microsoft.Azure.Mobile.Server.Config;
+using Microsoft.Azure.Mobile.Server.Extensions;
 using Microsoft.Azure.Mobile.Server.Properties;
 
 namespace Microsoft.Azure.Mobile.Server
