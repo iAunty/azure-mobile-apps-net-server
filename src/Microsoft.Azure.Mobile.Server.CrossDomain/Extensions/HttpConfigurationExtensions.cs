@@ -17,7 +17,10 @@ namespace System.Web.Http
                 throw new ArgumentNullException("config");
             }
 
-            return config.Properties.GetValueOrDefault<IEnumerable<string>>(CrossDomainOriginsKey);
+            if (!config.Properties.TryGetValue(CrossDomainOriginsKey, out var value))
+                return null;
+
+            return value as IEnumerable<string>;
         }
 
         public static void SetCrossDomainOrigins(this HttpConfiguration config, IEnumerable<string> crossDomainOrigins)
