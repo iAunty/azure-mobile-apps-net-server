@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Mobile.Server.Config
     /// from a set of values of type <typeparamref name="TSet"/>.
     /// </summary>
     /// <typeparam name="TSet">Type of set of values to include or exclude.</typeparam>
-    public class SetRouteConstraint<TSet> : IHttpRouteConstraint
+    public class SetRouteConstraint<TSet> : IHttpRouteConstraint where TSet : class 
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SetRouteConstraint{TSet}"/> class. Using
@@ -58,10 +58,9 @@ namespace Microsoft.Azure.Mobile.Server.Config
                 throw new ArgumentNullException("values");
             }
 
-            TSet value;
-            if (values.TryGetValue(parameterName, out value))
+            if (values.TryGetValue(parameterName, out var value))
             {
-                return this.Excluded ^ this.Set.Contains(value);
+                return this.Excluded ^ this.Set.Contains(value as TSet);
             }
 
             return false;

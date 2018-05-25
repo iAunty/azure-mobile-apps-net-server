@@ -34,7 +34,11 @@ namespace System.Web.Http
                 throw new ArgumentNullException("config");
             }
 
-            return config.Properties.GetValueOrDefault<MobileAppConfiguration>(MobileAppOptionsKey);
+            //if does not get value
+            if (!config.Properties.TryGetValue(MobileAppOptionsKey, out var value))
+                return null;
+
+            return value as MobileAppConfiguration;
         }
 
         /// <summary>
@@ -64,14 +68,13 @@ namespace System.Web.Http
                 throw new ArgumentNullException("config");
             }
 
-            IMobileAppSettingsProvider provider = null;
-            if (!config.Properties.TryGetValue(MobileAppSettingsProviderKey, out provider))
+            if (!config.Properties.TryGetValue(MobileAppSettingsProviderKey, out var provider))
             {
                 provider = new MobileAppSettingsProvider();
                 config.Properties[MobileAppSettingsProviderKey] = provider;
             }
 
-            return provider;
+            return provider as IMobileAppSettingsProvider;
         }
 
         /// <summary>
@@ -101,14 +104,13 @@ namespace System.Web.Http
                 throw new ArgumentNullException("config");
             }
 
-            ICachePolicyProvider provider = null;
-            if (!config.Properties.TryGetValue(CachePolicyProviderKey, out provider))
+            if (!config.Properties.TryGetValue(CachePolicyProviderKey, out var provider))
             {
                 provider = new CachePolicyProvider();
                 config.Properties[CachePolicyProviderKey] = provider;
             }
 
-            return provider;
+            return provider as ICachePolicyProvider;
         }
 
         /// <summary>
@@ -138,14 +140,13 @@ namespace System.Web.Http
                 throw new ArgumentNullException("config");
             }
 
-            IMobileAppControllerConfigProvider provider = null;
-            if (!config.Properties.TryGetValue(MobileAppControllerConfigProviderKey, out provider))
+            if (!config.Properties.TryGetValue(MobileAppControllerConfigProviderKey, out var provider))
             {
                 provider = new MobileAppControllerConfigProvider();
                 config.Properties[MobileAppControllerConfigProviderKey] = provider;
             }
 
-            return provider;
+            return provider as IMobileAppControllerConfigProvider;
         }
 
         /// <summary>
