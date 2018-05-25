@@ -2,15 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework> 
-    <Copyright>Copyright © Azure Mobile Apps .</Copyright> 
-    <Company>Azure Mobile Apps .</Company> 
-    <Authors>Azure Mobile Apps .</Authors> 
+    <Copyright>&amp;#169; Microsoft Corporation. All rights reserved</Copyright> 
+    <Company>Microsoft</Company> 
+    <Authors>Microsoft</Authors> 
     <Version>2.0.0.0</Version> 
-    <Description>The .NET server SDK for Azure Mobile Apps.</Description> 
-    <PackageLicenseUrl>https://github.com/Azure/azure-mobile-apps-net-server/blob/master/README.md</PackageLicenseUrl> 
-    <PackageProjectUrl>https://github.com/Azure/azure-mobile-apps-net-server</PackageProjectUrl> 
+    <Description>This is the Azure Mobile Apps .NET Server package, the core package for the server SDK. To learn more about Azure Mobile, go to http://azure.microsoft.com/mobile.</Description> 
+    <PackageLicenseUrl>http://go.microsoft.com/fwlink/?LinkID=331327</PackageLicenseUrl> 
+    <PackageProjectUrl>https://github.com/azure/azure-mobile-apps-net-server</PackageProjectUrl> 
     <RepositoryUrl>https://github.com/Azure/azure-mobile-apps-net-server</RepositoryUrl> 
-    <RepositoryType>Git</RepositoryType>
+    <RepositoryType>Git</RepositoryType> 
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild> 
+    <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkID=288890</PackageIconUrl> 
+    <PackageTags>microsoft azure mobile server windowsazureofficial aspnet webapi aspnetwebapi owin app service api apps</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
