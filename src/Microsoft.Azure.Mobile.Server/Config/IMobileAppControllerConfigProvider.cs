@@ -2,13 +2,12 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // ----------------------------------------------------------------------------
 
-using System.Web.Http.Controllers;
 
 namespace Microsoft.Azure.Mobile.Server.Config
 {
     /// <summary>
     /// Provides an abstraction for performing configuration customizations for controllers with the <see cref="MobileAppControllerAttribute"/>.
-    /// An implementation can be registered via the <see cref="System.Web.Http.HttpConfiguration"/>.
+    /// An implementation can be registered via the <see cref="HttpConfiguration"/>.
     /// </summary>
     public interface IMobileAppControllerConfigProvider
     {

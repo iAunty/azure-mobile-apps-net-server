@@ -2,7 +2,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // ---------------------------------------------------------------------------- 
 
-using System.Net.Http.Formatting;
 using Newtonsoft.Json.Serialization;
 
 namespace Microsoft.Azure.Mobile.Server.Serialization

@@ -6,14 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Web.Http;
-using System.Web.Http.Routing;
 using Microsoft.Azure.Mobile.Server.Properties;
 
 namespace Microsoft.Azure.Mobile.Server.Config
 {
     /// <summary>
-    /// Configures the specified <see cref="System.Web.Http.HttpConfiguration" /> with settings used by
+    /// Configures the specified <see cref="HttpConfiguration" /> with settings used by
     /// Azure Mobile Apps.
     /// </summary>
     public class MobileAppConfiguration : AppConfiguration

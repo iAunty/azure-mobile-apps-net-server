@@ -4,8 +4,6 @@
 
 using System;
 using System.Globalization;
-using System.Net.Http.Formatting;
-using System.Web.Http.Controllers;
 using Microsoft.Azure.Mobile.Server.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
