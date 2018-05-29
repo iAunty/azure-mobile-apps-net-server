@@ -2,6 +2,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // ---------------------------------------------------------------------------- 
 
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+
 namespace Microsoft.Azure.Mobile.Server
 {
     /// <summary>
@@ -15,7 +18,7 @@ namespace Microsoft.Azure.Mobile.Server
         public static readonly string Prefix = "App.";
 
         /// <summary>
-        /// Log category identifying logs coming from an <see cref="System.Web.Http.ApiController"/> action.
+        /// Log category identifying logs coming from an <see cref="Controller"/> action.
         /// </summary>
         public static readonly string Action = Prefix + "Action";
 
@@ -25,7 +28,7 @@ namespace Microsoft.Azure.Mobile.Server
         public static readonly string Config = Prefix + "Configuration";
 
         /// <summary>
-        /// Log category identifying logs coming from an <see cref="System.Web.Http.ApiController"/>.
+        /// Log category identifying logs coming from an <see cref="WebRequestMethods.Http.ApiController"/>.
         /// </summary>
         public static readonly string Controllers = Prefix + "Controllers";
 
@@ -35,7 +38,7 @@ namespace Microsoft.Azure.Mobile.Server
         public static readonly string JobsController = Prefix + "Controllers.Jobs";
 
         /// <summary>
-        /// Log category identifying logs coming from an ASP.NET Web API Filter (see <see cref="System.Web.Http.Filters.IFilter"/>).
+        /// Log category identifying logs coming from an ASP.NET Web API Filter (see <see cref="WebRequestMethods.Http.Filters.IFilter"/>).
         /// </summary>
         public static readonly string Filters = Prefix + "Filters";
 
