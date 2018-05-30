@@ -13,7 +13,7 @@ namespace Microsoft.Azure.Mobile.Server.Cache
     /// </summary>
     public class CachePolicy
     {
-        private CacheOptions options = CacheOptions.NoCache;
+        private CacheOptions _options = CacheOptions.NoCache;
 
         /// <summary>
         /// Gets or sets the <see cref="CacheOptions"/> to include with the <c>Cache-Control</c> HTTP header field.
@@ -22,13 +22,13 @@ namespace Microsoft.Azure.Mobile.Server.Cache
         {
             get
             {
-                return this.options;
+                return _options;
             }
 
             set
             {
                 CacheOptionsHelper.Instance.Validate(value, "value");
-                this.options = value;
+                _options = value;
             }
         }
 

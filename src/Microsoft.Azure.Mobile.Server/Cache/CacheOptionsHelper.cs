@@ -9,15 +9,7 @@ namespace Microsoft.Azure.Mobile.Server.Cache
     /// </summary>
     internal class CacheOptionsHelper : EnumHelper<CacheOptions>
     {
-        private static readonly CacheOptionsHelper HelperInstance = new CacheOptionsHelper();
-
-        public static CacheOptionsHelper Instance
-        {
-            get
-            {
-                return HelperInstance;
-            }
-        }
+        public static CacheOptionsHelper Instance { get; } = new CacheOptionsHelper();
 
         public override bool IsDefined(CacheOptions value)
         {

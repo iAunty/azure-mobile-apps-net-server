@@ -45,28 +45,16 @@ namespace Microsoft.Azure.Mobile.Server
         /// <summary>
         /// Gets the set of connection strings for the service.
         /// </summary>
-        public IDictionary<string, ConnectionSettings> Connections
-        {
-            get
-            {
-                return this.connections;
-            }
-        }
+        public IDictionary<string, ConnectionSettings> Connections => this.connections;
 
         /// <summary>
         /// Gets or sets the host name of the service.
         /// </summary>
         public virtual string HostName
         {
-            get
-            {
-                return this.GetSetting(MobileAppSettingsKeys.HostName);
-            }
+            get => this.GetSetting(MobileAppSettingsKeys.HostName);
 
-            set
-            {
-                this.SetSetting(MobileAppSettingsKeys.HostName, value);
-            }
+            set => this.SetSetting(MobileAppSettingsKeys.HostName, value);
         }
 
         /// <summary>
@@ -74,15 +62,9 @@ namespace Microsoft.Azure.Mobile.Server
         /// </summary>
         public virtual string SubscriptionId
         {
-            get
-            {
-                return this.GetSetting(MobileAppSettingsKeys.SubscriptionId);
-            }
+            get => this.GetSetting(MobileAppSettingsKeys.SubscriptionId);
 
-            set
-            {
-                this.SetSetting(MobileAppSettingsKeys.SubscriptionId, value);
-            }
+            set => this.SetSetting(MobileAppSettingsKeys.SubscriptionId, value);
         }
 
         /// <summary>
@@ -91,15 +73,9 @@ namespace Microsoft.Azure.Mobile.Server
         /// </summary>
         public virtual string NotificationHubName
         {
-            get
-            {
-                return this.GetSetting(MobileAppSettingsKeys.NotificationHubName);
-            }
+            get => this.GetSetting(MobileAppSettingsKeys.NotificationHubName);
 
-            set
-            {
-                this.SetSetting(MobileAppSettingsKeys.NotificationHubName, value);
-            }
+            set => this.SetSetting(MobileAppSettingsKeys.NotificationHubName, value);
         }
 
         /// <summary>
@@ -110,18 +86,14 @@ namespace Microsoft.Azure.Mobile.Server
         {
             get
             {
-                bool skipCheck = false;
                 var check = this.GetSetting(MobileAppSettingsKeys.SkipVersionCheck);
-                if (bool.TryParse(check, out skipCheck))
+                if (bool.TryParse(check, out var skipCheck))
                 {
                     return skipCheck;
                 }
                 return false;
             }
-            set
-            {
-                this.SetSetting(MobileAppSettingsKeys.SkipVersionCheck, value.ToString());
-            }
+            set => this.SetSetting(MobileAppSettingsKeys.SkipVersionCheck, value.ToString());
         }
 
         /// <summary>
@@ -144,16 +116,12 @@ namespace Microsoft.Azure.Mobile.Server
                 }
             }
 
-            set
-            {
-                base[key] = value;
-            }
+            set => base[key] = value;
         }
 
         private string GetSetting(string name)
         {
-            string value;
-            if (this.TryGetValue(name, out value))
+            if (this.TryGetValue(name, out var value))
             {
                 return value;
             }

@@ -30,12 +30,7 @@ namespace Microsoft.Azure.Mobile.Server.Cache
         /// an <see cref="HttpResponseMessage"/>.</param>
         public CachePolicyProvider(CachePolicy policy)
         {
-            if (policy == null)
-            {
-                throw new ArgumentNullException("policy");
-            }
-
-            this.Policy = policy;
+            this.Policy = policy ?? throw new ArgumentNullException(nameof(policy));
         }
 
         /// <summary>
@@ -49,7 +44,7 @@ namespace Microsoft.Azure.Mobile.Server.Cache
         {
             if (response == null)
             {
-                throw new ArgumentNullException("response");
+                throw new ArgumentNullException(nameof(response));
             }
 
             this.SetCacheOptions(response);
@@ -64,7 +59,7 @@ namespace Microsoft.Azure.Mobile.Server.Cache
         {
             if (response == null)
             {
-                throw new ArgumentNullException("response");
+                throw new ArgumentNullException(nameof(response));
             }
 
             CacheOptions options = this.Policy.Options;
@@ -128,7 +123,7 @@ namespace Microsoft.Azure.Mobile.Server.Cache
         {
             if (response == null)
             {
-                throw new ArgumentNullException("response");
+                throw new ArgumentNullException(nameof(response));
             }
 
             if (this.Policy.MaxAge.HasValue)
@@ -153,10 +148,7 @@ namespace Microsoft.Azure.Mobile.Server.Cache
         internal static void ForceNoCache(HttpResponseMessage response)
         {
             response.Headers.Pragma.Add(new NameValueHeaderValue("no-cache"));
-            if (response.Content != null)
-            {
-                response.Content.Headers.TryAddWithoutValidation("Expires", "0");
-            }
+            response.Content?.Headers.TryAddWithoutValidation("Expires", "0");
         }
     }
 }

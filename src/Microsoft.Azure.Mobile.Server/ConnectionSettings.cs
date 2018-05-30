@@ -11,8 +11,8 @@ namespace Microsoft.Azure.Mobile.Server
     /// </summary>
     public class ConnectionSettings
     {
-        private string name;
-        private string connectionString;
+        private string _name;
+        private string _connectionString;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionSettings"/> with a given <paramref name="name"/>
@@ -22,18 +22,8 @@ namespace Microsoft.Azure.Mobile.Server
         /// <param name="connectionString">The actual connection string.</param>
         public ConnectionSettings(string name, string connectionString)
         {
-            if (name == null)
-            {
-                throw new ArgumentNullException("name");
-            }
-
-            if (connectionString == null)
-            {
-                throw new ArgumentNullException("connectionString");
-            }
-
-            this.name = name;
-            this.connectionString = connectionString;
+            this._name = name ?? throw new ArgumentNullException(nameof(name));
+            this._connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
         }
 
         /// <summary>
@@ -41,20 +31,9 @@ namespace Microsoft.Azure.Mobile.Server
         /// </summary>
         public string Name
         {
-            get
-            {
-                return this.name;
-            }
+            get => this._name;
 
-            set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentNullException("value");
-                }
-
-                this.name = value;
-            }
+            set => this._name = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         /// <summary>
@@ -62,20 +41,9 @@ namespace Microsoft.Azure.Mobile.Server
         /// </summary>
         public string ConnectionString
         {
-            get
-            {
-                return this.connectionString;
-            }
+            get => this._connectionString;
 
-            set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentNullException("value");
-                }
-
-                this.connectionString = value;
-            }
+            set => this._connectionString = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         /// <summary>
